@@ -1,0 +1,257 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  transition: 0.3s;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background-color: #856161;
+  min-width: 850px;
+  color: #5c4343;
+}
+
+.slideshow-container {
+  width: auto;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+.slide {
+  display: none;
+}
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nav{
+  background-color: #a17d7d;
+  border-radius: 15px 15px 15px 15px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  position: static;
+  width: calc(100% - 40px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+  transition: 0.1s;
+}
+.nav >img{
+  background-color: #a17d7d;
+  margin: 5px;
+}
+.nava{
+  background-color: #a17d7d;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nava > a{
+  background-color: #a17d7d;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+  padding: 5px 20px;
+}
+.nava > a:hover{
+  color: #d4abab;
+  font-size: 20px;
+  border-bottom: solid 1px white;
+  transition: 0.3s;
+  padding: 5px 16px;
+  font-weight: 900;
+}
+.navfix{
+  height: 80px;
+}
+.container{
+  background-color: #a17d7d;
+  margin:20px 200px;
+  padding:15px;
+  color: white;
+  border-radius: 15px 15px 15px 15px;
+}
+.container h1{
+  font-size: 35px; 
+  text-align: center;
+  margin: 20px 5px;
+}
+/* 個人介紹 */
+.introd{
+  display: flex;
+  justify-content: center; 
+}
+.introd img{
+  width: 400px;
+  height: 400px;
+  border: solid 4px white;
+  border-radius: 20px;
+  margin: 15px;
+  margin-right: 60px;
+}
+.introdText{
+  display: grid;
+  margin: 15px;
+  text-align: center;
+}
+.introdText h2{
+  font-size: 40px;
+}
+.introdText p{
+  font-size: 20px;
+}
+
+/* 學經歷 */
+.xjl{
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+.xjlBox{
+  margin: 0px 25px;
+}
+.cbar{
+  width: 0px;
+  height: auto;
+  border: solid 1px white;
+  margin: 0px 15px;
+}
+
+/* 讚讚作品 */
+.np {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  grid-auto-flow: dense;
+}
+.npBox {
+  display: flex;
+  flex-direction: column;
+/*   border: 2px solid white; */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+}
+.npBox img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  transition: transform 0.4s ease;
+}
+.npBox:hover img {
+  transform: scale(1.05);
+}
+.npBox p {
+  margin: 0;
+  font-size: 16px;
+  color: white;
+}
+/* 橫向圖片容器樣式 */
+.npBox.horizontal {
+  grid-column: span 2;
+  min-width: 400px;
+}
+/* 直向圖片容器樣式 */
+.npBox.vertical {
+  min-width: 200px;
+}
+
+/* 聯絡資訊 */
+.ll{
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+}
+.llText{
+  font-size: 18px;
+  margin: auto;
+}
+.llMap{
+  margin: auto;
+}
+
+@media (max-width: 1300px){
+  .container{
+    margin: 20px 150px;
+  }
+}
+@media (max-width: 1200px){
+  .container{
+    margin: 20px 100px;
+  }
+  .introd{
+    flex-direction:column;
+  }
+  .introd img{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+  }
+  .introdText h2{
+    margin-bottom: 10px;
+  }
+  .cbar{
+  margin: 0px 10px;
+  }
+}
+@media (max-width: 1000px){
+  .ll{
+    display: flex;
+    flex-direction:column;
+    padding: 5px;
+    justify-content: center;
+  }
+  .llText{
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  .llMap{
+    margin: auto;
+  }
+}
+.cc{
+  text-align: center;
+}
+
+/* 花瓣動畫專用 */
+#petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* 確保花瓣不會干擾滑鼠點擊 */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  background-color: #ffc4c4; /* 花瓣顏色 */
+  border-radius: 15px 0px 15px 0px; /* 利用圓角做出花瓣形狀 */
+  opacity: 0.6;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) translateX(80px); /* 邊掉落邊旋轉和飄移 */
+    opacity: 0;
+  }
+}
