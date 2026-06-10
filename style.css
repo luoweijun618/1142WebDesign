@@ -38,6 +38,7 @@ body{
   width: calc(100% - 40px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
   transition: 0.1s;
+  z-index:4;
 }
 .nav >img{
   background-color: #a17d7d;
